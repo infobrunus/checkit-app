@@ -44,6 +44,4 @@ describe('TodoListComponent', () => {
     expect(component.activeFilter).toEqual('all');
     expect(component.getItems).toHaveBeenCalled();
   });
-
-  // Add more tests for other component methods
 });

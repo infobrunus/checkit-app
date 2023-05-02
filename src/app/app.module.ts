@@ -13,7 +13,6 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
-import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { SearchComponent } from './search/search.component';
     TodoListComponent,
     TodoItemComponent,
     ConfirmationDialogComponent,
-    SearchComponent
   ],
   imports: [
     BrowserModule,

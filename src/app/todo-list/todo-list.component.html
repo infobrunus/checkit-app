@@ -1,5 +1,3 @@
-<app-search *ngIf="false" (searchChange)="onSearchChange($event)"></app-search>
-
 <div class="todo-list">
   <div class="filter-buttons">
     <button mat-raised-button [class.active]="activeFilter === 'pendings'" (click)="applyFilter('pendings')">Pendings</button>
@@ -18,7 +16,7 @@
   </div>
   <div class="input-add-item">
     <mat-form-field appearance="outline">
-      <mat-icon matSuffix>send</mat-icon>
+      <mat-icon matSuffix (click)="addItem(newItemTitle); newItemTitle = ''">send</mat-icon>
       <input matInput [(ngModel)]="newItemTitle" (keydown.enter)="addItem(newItemTitle); newItemTitle = ''"
         placeholder="Press enter to add a new task" autofocus />
     </mat-form-field>

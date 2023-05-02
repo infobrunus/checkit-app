@@ -3,7 +3,6 @@ import { fadeInOut } from '../shared/animations';
 import { Item } from '../shared/item-interface';
 import { ItemService } from '../shared/item.service';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
-import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -52,14 +51,6 @@ export class TodoListComponent implements OnInit {
       }
       return false;
     });
-  }
-
-  async onSearchChange(searchTerm: string): Promise<void> {
-    if (!searchTerm.trim()) {
-      this.filteredItems = this.items;
-      return;
-    }
-    this.filteredItems = this.items.filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
   }
 
   async addItem(title: string): Promise<void> {

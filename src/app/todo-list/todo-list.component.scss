@@ -32,6 +32,9 @@
     justify-content: center;
     background-color: $dark-blue;
     height: 56px;
+    .mat-icon {
+      cursor: pointer;
+    }
     .mat-mdc-form-field {
       width: 100%;
     }

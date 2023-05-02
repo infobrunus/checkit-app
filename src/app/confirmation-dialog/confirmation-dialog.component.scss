@@ -1,0 +1,12 @@
+@import '../../_variables.scss';
+
+.confirmation-dialog {
+    text-align: center;
+    .mat-mdc-dialog-actions {
+        justify-content: center;
+        .btn-confirm-delete {
+            color: $white;
+            background-color: $dark-red;
+        }
+    }
+}

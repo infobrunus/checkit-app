@@ -30,6 +30,7 @@ export class TodoItemComponent implements OnInit {
   ngOnInit(): void { }
 
   async saveItem(): Promise<void> {
+    this.itemService.vibrate();
     this.isEditing = false;
     this.update.emit(this.item);
     this.itemService.openSnackBar('Item saved');
@@ -42,7 +43,6 @@ export class TodoItemComponent implements OnInit {
   }
 
   async editItem(): Promise<void> {
-    this.itemService.vibrate();
     this.editStart.emit(this.item.id);
     this.originalTitle = this.item.title;
     this.isEditing = true;
