@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import './_variables.scss';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: $dark-blue;
+    color: #fff;
+    position: relative;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-bottom: 4em;
+}
+
+.d-flex {
+    display: flex;
+}
+
+// Changing color of the Material Form Field texts
+
+body {
+    .todo-list {
+        .mat-mdc-input-element {
+            color: #fff !important;
+
+            &::placeholder {
+                color: #dfdfdf !important;
+            }
+        }
+
+        .mdc-card__actions {
+            padding-bottom: 0;
+        }
+
+        .mat-mdc-form-field {
+            width: 100%;
+
+            input {
+                font-size: $text-md;
+            }
+        }
+
+        .mat-mdc-checkbox {
+            .mdc-checkbox, .mdc-checkbox__background {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}

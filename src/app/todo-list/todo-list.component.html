@@ -1,0 +1,26 @@
+<app-search *ngIf="false" (searchChange)="onSearchChange($event)"></app-search>
+
+<div class="todo-list">
+  <div class="filter-buttons">
+    <button mat-raised-button [class.active]="activeFilter === 'pendings'" (click)="applyFilter('pendings')">Pendings</button>
+    <button mat-raised-button [class.active]="activeFilter === 'checked'" (click)="applyFilter('checked')">Checked</button>
+    <button mat-raised-button [class.active]="activeFilter === 'all'" (click)="applyFilter('all')">All</button>
+  </div>
+  <div *ngIf="items.length === 0">
+    <p *ngIf="activeFilter === 'all'" class="msg-feedback">Your Check-it! is empty.</p>
+    <p *ngIf="activeFilter === 'pendings'" class="msg-feedback">Yay! You don't have pending tasks :)</p>
+    <p *ngIf="activeFilter === 'checked'" class="msg-feedback">You haven't checked any any tasks yet</p>
+  </div>
+  <div *ngFor="let item of items" [@fadeInOut]>
+    <app-todo-item [item]="item" (update)="updateItem($event)" (delete)="deleteItem($event)"
+      (priority)="setPriority($event)" (editStart)="cancelAllEditing($event)"
+      (checked)="openCheckedSnackbar($event)"></app-todo-item>
+  </div>
+  <div class="input-add-item">
+    <mat-form-field appearance="outline">
+      <mat-icon matSuffix>send</mat-icon>
+      <input matInput [(ngModel)]="newItemTitle" (keydown.enter)="addItem(newItemTitle); newItemTitle = ''"
+        placeholder="Press enter to add a new task" autofocus />
+    </mat-form-field>
+  </div>
+</div>

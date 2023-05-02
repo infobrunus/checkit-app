@@ -1,0 +1,21 @@
+@import '../../_variables.scss';
+
+.todo-item {
+    background-color: $light-blue;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    cursor: pointer;
+
+    .item-title {
+        margin-top: 5px;
+        width: 100%;
+    }
+    .item-priority {
+        .priority-flag {
+            color: #9e1212;
+        }
+
+        .priority-flag-inactive {
+            color: #c4c4c4;
+        }
+    }
+}

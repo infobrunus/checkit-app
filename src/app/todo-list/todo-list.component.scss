@@ -1,0 +1,52 @@
+@import '../../_variables.scss';
+
+.todo-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2em;
+
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    button {
+      margin: 0 3px;
+      width: 102px;
+      &.active {
+        background-color: $light-blue;
+        color: $white;
+      }
+    }
+  }
+  .msg-feedback {
+    font-size: $text-sm;
+    text-align: center;
+  }
+  .input-add-item {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $dark-blue;
+    height: 56px;
+    .mat-mdc-form-field {
+      width: 100%;
+    }
+  }
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  .todo-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .todo-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

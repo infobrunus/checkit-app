@@ -1,0 +1,38 @@
+<mat-card class="todo-item">
+  <div *ngIf="!isEditing">
+    <div class="d-flex item-text">
+      <mat-checkbox class="item-checkbox" [(ngModel)]="item.checked" (click)="itemChecked()"></mat-checkbox>
+      <mat-card-title *ngIf="!isEditing" class="item-title" title="Double click to edit">
+        <div (dblclick)="editItem()">{{item.title}}</div>
+      </mat-card-title>
+    </div>
+    <mat-card-actions align="end" class="item-actions">
+      <button mat-icon-button color="primary" (click)="editItem()" *ngIf="!isEditing" matTooltip="Edit task">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="openConfirmationDialog()" matTooltip="Delete task">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button (click)="togglePriority()" class="item-priority"
+        [matTooltip]="item.priority ? 'Unmark as priority' : 'Mark as priority'">
+        <mat-icon [ngClass]="{'priority-flag': item.priority, 'priority-flag-inactive': !item.priority}">
+          flag
+        </mat-icon>
+      </button>
+    </mat-card-actions>
+  </div>
+  <div *ngIf="isEditing" class="item-edit" (blur)="cancelEdit()">
+    <mat-form-field appearance="outline">
+      <input matInput [(ngModel)]="item.title" (keydown.enter)="saveItemOnEnter()" #editInput>
+    </mat-form-field>
+    <mat-card-actions align="end" class="item-actions">
+      <button mat-icon-button color="primary" (click)="saveItem()" aria-label="Save" [disabled]="isTitleEmpty()"
+        matTooltip="Save">
+        <mat-icon>done</mat-icon>
+      </button>
+      <button mat-icon-button (click)="cancelEdit()" aria-label="Cancel" matTooltip="Cancel">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-card-actions>
+  </div>
+</mat-card>
