@@ -44,14 +44,35 @@ body {
             width: 100%;
 
             input {
-                font-size: $text-md;
+                font-size: $text-sm;
             }
         }
 
         .mat-mdc-checkbox {
-            .mdc-checkbox, .mdc-checkbox__background {
+
+            .mdc-checkbox,
+            .mdc-checkbox__background {
                 width: 25px;
                 height: 25px;
+            }
+        }
+        .item-checkbox {
+            .mdc-form-field {
+                display: block!important;
+            }
+        }
+    }
+}
+
+
+// Responsive
+@media (min-width: 1024px) {
+    body {
+        .todo-list {
+            .mat-mdc-form-field {
+                input {
+                    font-size: $text-md;
+                }
             }
         }
     }

@@ -6,8 +6,10 @@
     cursor: pointer;
 
     .item-title {
-        margin-top: 5px;
+        margin-top: 4px;
         width: 100%;
+        font-size: $text-sm;
+        padding-right: 0.4em;
     }
     .item-priority {
         .priority-flag {
@@ -19,3 +21,12 @@
         }
     }
 }
+
+// Responsive
+@media (min-width: 1024px) {
+    .todo-item {
+        .item-title {
+            font-size: $text-md;
+        }
+    }
+  }

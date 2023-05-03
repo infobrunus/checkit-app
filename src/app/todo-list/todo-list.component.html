@@ -6,8 +6,8 @@
   </div>
   <div *ngIf="items.length === 0">
     <p *ngIf="activeFilter === 'all'" class="msg-feedback">Your Check-it! is empty.</p>
-    <p *ngIf="activeFilter === 'pendings'" class="msg-feedback">Yay! You don't have pending tasks :)</p>
-    <p *ngIf="activeFilter === 'checked'" class="msg-feedback">You haven't checked any any tasks yet</p>
+    <p *ngIf="activeFilter === 'pendings'" class="msg-feedback">Yay! You don't have pending tasks</p>
+    <p *ngIf="activeFilter === 'checked'" class="msg-feedback">You haven't checked any tasks yet</p>
   </div>
   <div *ngFor="let item of items" [@fadeInOut]>
     <app-todo-item [item]="item" (update)="updateItem($event)" (delete)="deleteItem($event)"
@@ -18,7 +18,7 @@
     <mat-form-field appearance="outline">
       <mat-icon matSuffix (click)="addItem(newItemTitle); newItemTitle = ''">send</mat-icon>
       <input matInput [(ngModel)]="newItemTitle" (keydown.enter)="addItem(newItemTitle); newItemTitle = ''"
-        placeholder="Press enter to add a new task" autofocus />
+        placeholder="Add a new task" autofocus />
     </mat-form-field>
   </div>
 </div>

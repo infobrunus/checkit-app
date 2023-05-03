@@ -65,6 +65,7 @@ export class TodoItemComponent implements OnInit {
   }
 
   async deleteItem(): Promise<void> {
+    this.itemService.vibrate();
     this.delete.emit(this.item.id);
     this.itemService.openSnackBar('Item deleted');
   }
@@ -78,6 +79,7 @@ export class TodoItemComponent implements OnInit {
   }
 
   async togglePriority(): Promise<void> {
+    this.itemService.vibrate();
     this.priority.emit(this.item);
   }
 

@@ -20,7 +20,7 @@
     }
   }
   .msg-feedback {
-    font-size: $text-sm;
+    font-size: 18px;
     text-align: center;
   }
   .input-add-item {
@@ -30,7 +30,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: $dark-blue;
+    background-color: $middle-blue;
     height: 56px;
     .mat-icon {
       cursor: pointer;

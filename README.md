@@ -1,8 +1,8 @@
 # Check-it! App
 
-This is my project for a checklist app, using Angular, TypeScript, and Material UI. The layout is very simple,
-but it's based in mobile layouts and made with colors that doesn't force the eye.
-In the app, you can add a new task, edit it, check as finished, mark as priority and delete it. 
+This is my project for a checklist app, using Angular, TypeScript, and Material UI. 
+The layout is very simple, but it's based in mobile layouts (just like the PWAs) and made with colors that are friendly to the vision.
+In the app, you can add a new task, edit it, check it as finished, mark it as priority and delete it. 
 You can also filter by the finished tasks, pending tasks or all of them.
 
 I had a lot of fun doing the project and I'm very excited to improve it later!
